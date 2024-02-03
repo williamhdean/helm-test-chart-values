@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+metadata: 
+  name: my-helm-chart
+  namespace: argocd
+kind: Application
+spec:
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      allowEmpty: true
+    syncOptions:
+      - CreateNamespace=true
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: test-helm 
+  sources:
+  - repoURL: registry-1.docker.io/williamhdean
+    targetRevision: 0.1.0
+    chart: helm-test-chart 
+    helm: 
+      passCredentials: true
+      valueFiles:
+      - $values/argocd-manifest-helm-test-chart.yaml
+  - repoURL: '<my-repo-uri>'
+    targetRevision: main
+    ref: values

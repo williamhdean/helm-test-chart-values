@@ -16,13 +16,13 @@ spec:
     server: https://kubernetes.default.svc
     namespace: test-helm 
   sources:
-  - repoURL: registry-1.docker.io/williamhdean
+  - repoURL: 'registry-1.docker.io/williamhdean'
     targetRevision: 0.1.1
     chart: helm-test-chart 
     helm: 
       passCredentials: true
-      valuesFiles:
+      valueFiles:
       - $values/values.yaml
-  - repoURL: git@github.com:williamhdean/helm-test-chart-values.git
+  - repoURL: 'git@github.com:williamhdean/helm-test-chart-values.git'
     targetRevision: main
     ref: values

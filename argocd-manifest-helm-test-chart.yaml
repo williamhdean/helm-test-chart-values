@@ -22,7 +22,7 @@ spec:
     helm: 
       passCredentials: true
       valueFiles:
-      - $values/argocd-manifest-helm-test-chart.yaml
-  - repoURL: '<my-repo-uri>'
+      - $values/values.yaml
+  - repoURL: git@github.com:williamhdean/helm-test-chart-values.git
     targetRevision: main
     ref: values

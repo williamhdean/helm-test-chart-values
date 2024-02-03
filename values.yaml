@@ -1,0 +1,6 @@
+
+# This just exposes the service directly rather than us creating an 
+# ingress to host it. In a production setting, this is not best practice.
+server:
+  service: 
+    type: LoadBalancer

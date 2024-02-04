@@ -24,5 +24,6 @@ spec:
       valueFiles:
       - $values/values.yaml
   - repoURL: 'git@github.com:williamhdean/helm-test-chart-values.git'
+    path: ./
     targetRevision: main
     ref: values
